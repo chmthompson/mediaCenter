@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Torrents
+{% endblock %}
+
+{% block body %}
+<div class="CSSTableGenerator">
+	<Table>
+		<TR><TD>File Name</TD></TR>
+		{% for torrent in torrentDirectoryList %}
+			<TR><TD>{{ torrent }}</TD></TR>
+		{% endfor %}
+	</Table>
+</div>
+{% endblock %}

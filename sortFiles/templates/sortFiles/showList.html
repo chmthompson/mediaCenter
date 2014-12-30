@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Tracked Shows
+{% endblock %}
+
+{% block body %}
+Show To Add: 
+<select>
+	{% for show in tvShow.GetAllShows %}
+		<option value={{ show }}>{{ show }}</option>
+	{% endfor %}
+</select>
+
+
+<div class="CSSTableGenerator">
+	<Table>
+		<TR><TD>Tracked Shows</TD></TR>
+		{% for show in tvShow.GetAllTrackedShows %}
+			<TR><TD>{{ show }}</TD></TR>
+		{% endfor %}
+	</Table>
+{% endblock %}

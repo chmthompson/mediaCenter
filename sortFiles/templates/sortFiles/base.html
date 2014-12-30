@@ -1,0 +1,65 @@
+
+<HTML>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>
+	{% block title %}
+	{% endblock %}
+	</title>
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL}}css/menumaker.css">
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL}}css/tables.css">
+	<style>
+		#cssmenu {
+			position: relative;
+			top: 15px;
+			margin: 0px 250px;
+			z-index: 1;
+		}
+		
+		#body {
+			position: relative;
+			top: 40px;
+			margin: 0px 250px;
+		}
+	</style>
+</head>
+<body>
+	
+<div id="cssmenu">
+	<ul>
+		<li><a href="#">Home</a></li>
+		<li>
+			<a href="#">Audio</a>
+			<ul>
+				<li><a href="mp3TorrentList">Torrents</a></li>
+				<li><a href="#">Mp3 Collection</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">Videos</a>
+			<ul>
+				<li><a href="showList">TV Shows</a></li>
+			</ul>
+		</li>
+		<li><a href="#">Contact</a></li>
+	</ul>
+</div>
+
+<script src="{{ STATIC_URL}}js/jquery-1.8.3.min.js"></script>
+<script src="{{ STATIC_URL}}js/menumaker.js"></script>
+<script type="text/javascript">
+	$("#cssmenu").menumaker({
+		title: "Menu",
+		format: "multitoggle"
+	});
+</script>
+
+<div id="body">
+	{% block body %}
+	{% endblock %}
+</div>
+
+</body>
+</HTML>
